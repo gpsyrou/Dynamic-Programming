@@ -5,9 +5,6 @@
 using namespace Rcpp;
 using namespace std;
 
-///////////////////////////////////////
-// Skeleton code for Homework 3A
-///////////////////////////////////////
 
 // function to calculate factorial
 int fac(int n) {
@@ -23,8 +20,6 @@ int fac(int n) {
 int choose_fac(int n, int k) {
   return fac(n)/fac(k)/fac(n-k);
 }
-
-
 
 
 // compute choose(n,k) using dynamic programming
