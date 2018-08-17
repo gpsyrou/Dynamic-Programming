@@ -13,3 +13,4 @@ follow the links provided below:
 3) Binomial Coefficients calculation using DP ( + 2  R methods) - C++
    reference link: https://www.geeksforgeeks.org/dynamic-programming-set-9-binomial-coefficient/
     
+4) Implementation of two E-M algorithms for Gaussian Mixture Models
