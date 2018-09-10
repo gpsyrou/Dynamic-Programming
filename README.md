@@ -21,12 +21,13 @@ follow the links provided below:
        <br><br/>
        Now we have to explain why the results at the table above, are not consistent, even though they should do the same job. I will separate these three different implementations and discuss our findings for each of them, as follows:
 <br><br/>
-**choose_fac **
+
+**choose_fac**
 
 The first case, choose_fac overflows really fast (from the second case already-only the first one was successful).This is happening as from the way this function is defined, makes it impossible to store big number (we already have problem for n = 15) and we have overflow of the integer making it unable to give the proper answer. Hence, these big numbers cannot be stored in the bits provided with this implementation of finding factorials .We can have higher values only by using another libraries, but with the standard library of C++ , we have limits on the values).
 
 <br><br/>
-**choose_dp  **
+**choose_dp**
 
 The second case seems to work fine and give us the proper results for all the cases except the last one. At the last one we have a really big pair (n,k), and thus we end up again in an overflow for huge numbers ( that’s why we get a negative value). We may say that it might be a precision error due to the range of the numbers and using factorials bigger than 20 in C++ is impossible with built in functions.
 
