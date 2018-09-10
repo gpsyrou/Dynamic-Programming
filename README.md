@@ -19,7 +19,7 @@ follow the links provided below:
        ![alt text](https://github.com/gpsyrou/Dynamic-Programming/blob/master/fac_pc.PNG)
        
        <br><br/>
-       Now we have to explain why the results at the table above, are not consistent, even though they should do the same job. I will separate these three different implementations and discuss our findings for each of them, as follows:
+Now we have to explain why the results at the table above, are not consistent, even though they should do the same job. I will separate these three different implementations and discuss our findings for each of them, as follows:
 <br><br/>
 
 **choose_fac**
