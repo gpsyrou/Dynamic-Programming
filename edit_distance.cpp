@@ -1,6 +1,4 @@
 
-/*Homework 3 / Biostat 615 / Georgios Spyrou*/
-
 #include <Rcpp.h>
 #include <iostream>
 #include <string>
@@ -10,9 +8,6 @@ using namespace std;
 
 /*we will construct a dynamic programmic algorithm for the edit distance problem*/
 
-/* we are going to follow the logic of the lecture notes and try to implement
-* the edit distance problem
-*/
 int editDistance(string& s1, string& s2, IntegerMatrix& cost, IntegerMatrix& move, int r, int c, int mcost, int icost) {
   
   if ( cost(r,c) < 0 ) {
@@ -99,11 +94,5 @@ List alignWords(string s1, string s2, int mcost, int icost) {
                       Named("second") = second_word);
 
 
-} /* end of question C for HW3*/
-
-
-
-
-
-
+}
 
