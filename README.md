@@ -13,7 +13,6 @@ follow the links provided below:
    3) Binomial Coefficients calculation using DP ( + 2  R methods) - C++
        reference link: https://www.geeksforgeeks.org/dynamic-programming-set-9-binomial-coefficient/
        
-       
        Output:
        <br><br/>
        ![alt text](https://github.com/gpsyrou/Dynamic-Programming/blob/master/fac_pc.PNG)
