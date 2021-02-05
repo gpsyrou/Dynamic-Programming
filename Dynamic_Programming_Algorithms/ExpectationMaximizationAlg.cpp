@@ -6,8 +6,6 @@
 using namespace Rcpp;
 using namespace std;
 
-// function 1
-// we will need to use the function that we have created in part (a) of this homework
 // [[Rcpp::export]]
 NumericVector partiallyShuffleVector(NumericVector& x, int k) {
   
@@ -22,14 +20,12 @@ NumericVector partiallyShuffleVector(NumericVector& x, int k) {
   }
   
   NumericVector final_lis(x.begin(),x.begin()+k);
-  return final_lis; // we need this to return the suffled elements of the vector
+  return final_lis;
   
 }
 
 
-// function 2
-// we will use this function in order to calculate 
-// the standard deviation at the second algorithm and for some part of the first one
+//  use this function in order to calculate the standard deviation at the second algorithm and for some part of the first one
 double find_sd(NumericVector& x){
   
   int n = x.size();
@@ -46,14 +42,8 @@ double find_sd(NumericVector& x){
 }
 
 
-// Now that we initialized the two functions that we are going to use
-// we can proceed and make the two algorithms that we are asked to do
 
-
-// Algorithm 1
-// At first we are computing the e-m algorithm for the general case
-// i.e. here we do not assume same variances
-
+//  e-m algorithm for the case of equal variances
 
 // [[Rcpp::export]]
 List gmm615emFull(NumericVector x, int k, int maxiter=1000, double tol=1e-8) {
@@ -79,10 +69,7 @@ List gmm615emFull(NumericVector x, int k, int maxiter=1000, double tol=1e-8) {
     
     for(int j = 0; j < n ; j++){
       for(int z = 0; z < k ; z++){ // O(N*K) algorithm per itteration
-        
-        // we follow the logic as in the lecture notes
-        // and the homework example 
-        
+       
         w[z] = pis[z] * R::dnorm(x[j],mus[z],sds[z],0); // draw from normal
         s = std::accumulate(w.begin(),w.end(),0.0);
         std::for_each(w.begin(),w.end(), w = w/s);
@@ -95,10 +82,7 @@ List gmm615emFull(NumericVector x, int k, int maxiter=1000, double tol=1e-8) {
     
     if(abs(llk - maxllk) < tol){break;}
     maxllk = llk;
-    
-    // M step is going to be performed as regular
-    // and as it is presented at the example in the homework
-    
+       
     pis = wsum / n;
     mus = wxsum / n / pis;
     sds = sqrt(wxxsum / n / pis - mus * mus);
@@ -150,8 +134,7 @@ List gmm615emUniVar(NumericVector x, int k, int maxiter=1000, double tol=1e-8) {
         wsum = wsum + w;
         wxsum = wxsum + w * x[j];
         wxxsum = wxxsum + w * x[j] * x[j];
-        //need to do some computations here 
-        // so we can retrieve the sd in a different way
+
         find_mus = wxsum  / wsum;
         find_pis = wsum / n;
         mpis_total = find_mus * find_mus * find_pis;
